@@ -14,16 +14,16 @@ class MainActivity : AppCompatActivity() {
         setOnClickListenerForButton()
     }
 
-    private fun calculateBMI():Double{
-        var weight:Double = (numWeight.getText().toString().toDouble())
-        var height:Double = (numHeight.getText().toString().toDouble())
+    private fun calculateBMI(): Double {
+        var weight: Double = (numWeight.getText().toString().toDouble())
+        var height: Double = (numHeight.getText().toString().toDouble())
 
         return (weight / height / height)
     }
 
-    private fun setOnClickListenerForButton(){
-        btnCalculateBMI.setOnClickListener{
-            val intent = Intent("com.example.gabriel.bmicalculator.BMIResultsScreen")
+    private fun setOnClickListenerForButton() {
+        btnCalculateBMI.setOnClickListener {
+            val intent = Intent(this, BMIResultsScreen::class.java)
             intent.putExtra("BMIResult",calculateBMI())
             startActivity(intent)
         }

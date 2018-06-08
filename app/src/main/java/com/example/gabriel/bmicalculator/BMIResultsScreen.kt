@@ -29,7 +29,7 @@ class BMIResultsScreen : AppCompatActivity() {
 
     fun findBMICategory(){
         var categoryOfBMI = "Unknown"
-        var resultBMI = getIntent().getExtras().getDouble("BMIResults")
+        var resultBMI = getIntent().getExtras().getDouble("BMIResult")
 
         if(resultBMI < 15){
             categoryOfBMI = "Very Severely Underweight"
@@ -60,7 +60,7 @@ class BMIResultsScreen : AppCompatActivity() {
 
     fun setCheckAgainListener(){
         btnCheckAgain.setOnClickListener{
-            val intent = Intent("com.example.gabriel.bmicalculator.MainActivity")
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
     }
